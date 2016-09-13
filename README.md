@@ -1,9 +1,9 @@
 # official-news-crawler
 
-To download ASEAN news ftom Official News Agencies in the early stage.
+To download ASEAN news ftom Official News Agencies in the early stage.  
 
-You have to install: Python3, requests and BeautifulSoup.
-(Anaconda includes all these things)
+You have to install: Python3, requests and BeautifulSoup.  
+(Anaconda includes all these things)  
 
 
 # Official News Agencies of ASEAN Members
