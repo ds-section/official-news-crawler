@@ -1,2 +1,5 @@
+# mac default file
 *.DS_Store
-*/news/*
+
+# news results
+*/news/*.txt
