@@ -2,6 +2,10 @@
 
 To download ASEAN news ftom Official News Agencies in the early stage.
 
+You have to install: Python3, requests and BeautifulSoup.
+(Anaconda includes all these things)
+
+
 # Official News Agencies of ASEAN Members
 
 ## 1. Indonesia

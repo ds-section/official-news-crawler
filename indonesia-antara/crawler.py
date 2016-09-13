@@ -3,11 +3,7 @@ from bs4 import BeautifulSoup
 import time
 import datetime
 
-# Crawler for http://www.antaranews.com/en/business/
-# This case the web would not show 404, so we have identify by list_link
 
-#### add multiple trying times and decent wait upon requests.get()
-#### notice that we set a global var to record request_times in method dogged_get()
 request_times = 0
 def dogged_get(url):
     global request_times
@@ -122,9 +118,9 @@ def get_articles_by_url(url):
     content_news = soup.find('div', id='content_news')
     return(str(content_news))
 
-def save_articles_from_page(start_page, final_page):
+def save_articles_from_page(start_page, end_page):
     
-    for page in range(start_page-1, final_page):
+    for page in range(start_page-1, end_page):
 
         with open('news/' + str(page+1) + '.txt', 'w') as f:
 
@@ -136,25 +132,4 @@ def save_articles_from_page(start_page, final_page):
                 f.write(url + '\n')
                 f.write(get_articles_by_url(url) + '\n\n')
 
-
-#### 1. guess the final page
-# print(guess_the_final_page())
-# final_page = 845
-
-#### 2. get the links from every page
-# all_page_link_list = []
-
-# for page in range(final_page):
-
-#     print('page:', page+1)
-#     one_page_link_list = get_news_links_list_by_page(page+1)
-
-#     for link in one_page_link_list:
-#         (all_page_link_list.append(link))
-
-
-#### 3. get the articles by page
-##### write to file
-save_articles_from_page(840, 842)
-
-print('program end! requests with', request_times, 'times.')
+    print('download finished! requests with', request_times, 'times.')
