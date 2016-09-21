@@ -23,11 +23,11 @@ def dogged_get(url):
                 print('faild', i+1, 'time(s), keep trying')
                 time.sleep(3)
 
-        # empty out after trying 5 times
+        print('empty out after trying 5 times')
         return('')
 
     else:
-        # empty in, empty out
+        print('empty in, empty out')
         return('')
 
 def print_the_page_information_by_page(page):
