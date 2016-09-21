@@ -1,5 +1,8 @@
 # mac default file
 *.DS_Store
 
+# python execute file
+*__pycache__
+
 # news results
 */news/*.txt

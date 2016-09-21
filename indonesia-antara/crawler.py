@@ -3,29 +3,32 @@ from bs4 import BeautifulSoup
 import time
 import datetime
 
-
 request_times = 0
+
 def dogged_get(url):
     global request_times
+   
+    if url != '':
 
-    # empty in, empty out
-    if url == '':
-        return('')
+        for i in range(5):
+            
+            time.sleep(1.5)
+            r = requests.get(url)
+            request_times = request_times + 1
 
-    for i in range(5):
-        time.sleep(1.5)
-        r = requests.get(url)
-        request_times = request_times + 1
-
-        if r.status_code == 200:
-            print(r.status_code)
-            return(r)
-        else:
-            print('faild', i+1, 'time(s), keep trying')
-            time.sleep(3)
+            if r.status_code == 200:
+                print(r.status_code)
+                return(r)
+            else:
+                print('faild', i+1, 'time(s), keep trying')
+                time.sleep(3)
 
         # empty out after trying 5 times
-    return('')
+        return('')
+
+    else:
+        # empty in, empty out
+        return('')
 
 def print_the_page_information_by_page(page):
     # get the HTML response
