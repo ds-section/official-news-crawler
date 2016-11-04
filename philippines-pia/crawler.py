@@ -79,12 +79,12 @@ def save_articles_from_page(start_page, final_page):
                 f.write(url + '\n')
                 f.write(get_articles_by_url(url) + '\n\n')
 
-# 1. get the final page
-# final_page = 1160
 
+if __name__ == '__main__':
+    # 1. get the final page
+    # final_page = 1160
 
-# print(get_news_links_list_by_page(1))
-save_articles_from_page(1159, 1160)
+    # print(get_news_links_list_by_page(1))
+    save_articles_from_page(1159, 1160)
 
-
-print('program end! requests with', request_times, 'times.')
+    print('program end! requests with', request_times, 'times.')
